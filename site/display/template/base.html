@@ -1,0 +1,61 @@
+{% spaceless %}
+<!DOCTYPE html >
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1" />
+		<title>{% block title %}{% endblock %}</title>
+		<meta name="description" content="{% block metadesc %}{% endblock %}" />
+		<meta name="keywords" content="{% block keywords %}{% endblock %}" />
+		
+		{% block meta %}{% endblock %}
+		
+		<style>
+		
+			{% include 'main.css' %}
+		</style>
+		
+		{% block link %}
+		{% endblock %}
+
+    </head>
+
+    <body>
+    	{% block body %}
+    	
+    	{% block header %}
+        <header>
+        </header>
+        {% endblock %}
+        
+        <section>
+        	{% block content %}
+        	{% endblock %}
+        </section>
+
+		{% block footer %}
+        <footer>
+        </footer>
+        {% endblock %}
+
+		<script type="text/javascript">
+		var ROOT = '{{_root}}';
+		var MOBILE = {% if _mobile is defined %}true{% else %}false{% endif %};
+		</script>
+		<script {% if _oldie is not defined %}defer {% endif %}type="text/javascript" src="{{_root}}site/lib/public/html5tools/modernizr.js?ver={{_version}}"></script>	
+		<script {% if _oldie is not defined %}defer {% endif %}type="text/javascript" src="{{_root}}site/lib/public/html5tools/respond.js?ver={{_version}}"></script>	
+		<script {% if _oldie is not defined %}defer {% endif %}src="{{_root}}site/display/js/general/jquery.min.js?ver={{_version}}"
+			type="text/javascript"></script>
+		<script {% if _oldie is not defined %}defer {% endif %}src="{{_root}}site/lib/public/jquery/js/jquery-ui-custom.min.js?version={{_version}}"
+			type="text/javascript"></script>
+		<script {% if _oldie is not defined %}defer {% endif %}type="text/javascript" src="{{_root}}site/lib/public/jquery_cookie/jquery.cookie.js?ver={{_version}}"></script>	
+		<script {% if _oldie is not defined %}defer {% endif %}type="text/javascript" src="{{_root}}site/display/js/main.js?version={{_version}}"></script>
+		<!--[if lt IE 9]>
+		<script type="text/javascript" src="{{_root}}display/js/ie.js"></script>
+		<![endif]-->		
+		{% block script %}{% endblock %}
+
+	{% endblock %}
+    </body>
+</html>
+{% endspaceless %}

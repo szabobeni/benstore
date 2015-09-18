@@ -1,0 +1,1 @@
+alert('You seem to be using an old version of Internet Explorer. We cannot guarantee that all features are working propely or it displays the site correctly. Please upgrade your browser to the latest version. Thank you.');

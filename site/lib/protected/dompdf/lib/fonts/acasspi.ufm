@@ -1,0 +1,58 @@
+StartFontMetrics 4,1
+Notice Converted by PHP-font-lib
+Comment http://php-font-lib.googlecode.com/
+EncodingScheme FontSpecific
+Copyright ProFonts Library Ver.2000 Copyright (c) ScanDer Ltd. Hungary 1993-1999. All rights reserved. ProFonts is a registered trademark of ScanDer Ltd. Hungary. URL:w3.datanet.hu/~scander;E-mail:scander@mail.datanet.hu;Post:H-1146 Budapest, Thokoly ut 59A
+FontName ACaslonSw_PFL
+FontSubfamily Italic
+UniqueID ScanDerLtd: ACaslonSw_PFL Italic: 2000
+FullName ACaslonSw_PFL Italic
+Version 2000; 5.502
+PostScriptName ACaslonSw_PFL-Italic
+Trademark ProFonts is a registered trademark of ScanDer Ltd. Hungary.
+Weight Medium
+ItalicAngle -11
+IsFixedPitch false
+UnderlineThickness 50
+UnderlinePosition -100
+FontHeightOffset 0
+Ascender 845
+Descender -324
+FontBBox -145 -388 1569 909
+StartCharMetrics 32
+U 32 ; WX 333 ; N space ; G 1
+U 65 ; WX 1093 ; N A ; G 2
+U 66 ; WX 812 ; N B ; G 3
+U 67 ; WX 587 ; N C ; G 4
+U 68 ; WX 973 ; N D ; G 5
+U 69 ; WX 516 ; N E ; G 6
+U 70 ; WX 809 ; N F ; G 7
+U 71 ; WX 683 ; N G ; G 8
+U 72 ; WX 1136 ; N H ; G 9
+U 73 ; WX 425 ; N I ; G 10
+U 74 ; WX 615 ; N J ; G 11
+U 75 ; WX 868 ; N K ; G 12
+U 76 ; WX 653 ; N L ; G 13
+U 77 ; WX 1401 ; N M ; G 14
+U 78 ; WX 1267 ; N N ; G 15
+U 79 ; WX 681 ; N O ; G 16
+U 80 ; WX 835 ; N P ; G 17
+U 81 ; WX 976 ; N Q ; G 18
+U 82 ; WX 1148 ; N R ; G 19
+U 83 ; WX 623 ; N S ; G 20
+U 84 ; WX 749 ; N T ; G 21
+U 85 ; WX 802 ; N U ; G 22
+U 86 ; WX 763 ; N V ; G 23
+U 87 ; WX 977 ; N W ; G 24
+U 88 ; WX 1111 ; N X ; G 25
+U 89 ; WX 745 ; N Y ; G 26
+U 90 ; WX 728 ; N Z ; G 27
+U 160 ; WX 500 ; N nbspace ; G 28
+U 57345 ; WX 0 ; N .null ; G 29
+U 57346 ; WX 333 ; N CR ; G 30
+EndCharMetrics
+StartKernData 
+StartKernPairs 494
+EndKernPairs
+EndKernData
+EndFontMetrics

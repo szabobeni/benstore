@@ -1,0 +1,91 @@
+#
+# This file is a part of the BenStore PHP Framework.
+# All rights reserved.
+# (C) Bence Szabo 2013
+#
+
+
+# Setting PHP variables for ORM
+SetEnv PHP_VER 5_TEST
+SetEnv REGISTER_GLOBALS 0
+SetEnv MAGIC_QUOTES 0
+php_value session.gc_maxlifetime 86400
+
+# Setting index file
+DirectoryIndex index.php
+
+# Custom error documents
+ErrorDocument 404 /site/display/static/error404.php
+ErrorDocument 403 /site/display/static/error403.php
+ErrorDocument 500 /site/display/static/error500.php
+
+# Protecting system files
+<Files ~ "(\.(inc|module|pl|sh|sql|theme|engine|xtmpl)|Entries|Repositories|Root|scripts|updates)$">
+  Order deny,allow
+  Deny from all
+</Files>
+
+<Files ~ "(build\.properties|runtime-conf.xml|schema.xml)$">
+  Order deny,allow
+  Deny from all
+</Files>
+
+<FilesMatch "^\.ht">
+    Order allow,deny
+    Deny from all
+    Satisfy All
+</FilesMatch>
+
+<FilesMatch "^\.svn">
+    Order allow,deny
+    Deny from all
+    Satisfy All
+</FilesMatch>
+
+# Disabling directoty listing
+Options -Indexes
+Options +FollowSymLinks
+IndexIgnore *
+
+# Setting cache for static resources
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/gif A2592000
+ExpiresByType image/jpeg A2592000
+ExpiresByType image/jpg A2592000
+ExpiresByType image/png A2592000
+ExpiresByType image/x-icon A2592000
+ExpiresByType text/css A86400
+ExpiresByType application/x-shockwave-flash A2592000
+
+<FilesMatch "\.(gif¦jpe?g¦png¦ico¦css¦js¦swf)$">
+Header set Cache-Control "public"
+</FilesMatch>
+
+<FilesMatch "\.(js)$"> 
+    ExpiresDefault A29030400 
+</FilesMatch>
+<FilesMatch "\.(woff)$"> 
+    ExpiresDefault A29030400 
+</FilesMatch>
+</IfModule>
+
+
+<IfModule mod_rewrite.c>
+
+# Redirecting non WWW to WWW
+	RewriteEngine On
+	RewriteBase /
+	
+#    RewriteCond %{HTTP_HOST} !^www\.
+#    RewriteCond %{HTTP_HOST} !\.loc$
+#    RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+		
+	RewriteRule ^index\.php$ - [L,QSA]
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} !/display/
+	RewriteRule . index.php [L,QSA]
+	
+</IfModule>
+
